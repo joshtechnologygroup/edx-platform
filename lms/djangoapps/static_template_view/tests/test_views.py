@@ -71,8 +71,7 @@ class MarketingSiteViewTests(TestCase):
         resp = self.client.get(url)
         self.assertEqual(resp.status_code, 200)
         self.assertEqual(resp['Content-Type'], 'text/html')
-        resp = self.client.get(url)
-        self.assertContains(resp, settings.TECH_SUPPORT_EMAIL)
+
 
     def test_500(self):
         """
@@ -92,4 +91,4 @@ class MarketingSiteViewTests(TestCase):
             ),
             status_code=500
         )
-        self.assertContains(resp, settings.TECH_SUPPORT_EMAIL, status_code=500)
+
